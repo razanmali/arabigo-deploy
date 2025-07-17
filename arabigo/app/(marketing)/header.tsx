@@ -65,13 +65,12 @@ export const Header = () => {
             height={70} 
             width={70} 
             alt="Arabigo" 
-            priority
           />
           <h1 className="text-2xl font-extrabold text-green-600 tracking-wide">
             Arabigo
           </h1>
         </div>
-        <div className="flex items-center">
+        {/* <div className="flex items-center"> */}
           <ClerkLoading>
             <Loader className="h-5 w-5 text-muted-foreground animate-spin" />
           </ClerkLoading>
@@ -92,7 +91,7 @@ export const Header = () => {
             </SignedOut>
           </ClerkLoaded>
         </div>
-      </div>
+      {/* </div> */}
     </header>
   );
 };

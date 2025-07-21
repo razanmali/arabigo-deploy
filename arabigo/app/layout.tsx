@@ -6,7 +6,8 @@ import {
   SignedIn,
   SignedOut,
   UserButton,
-} from '@clerk/nextjs'
+} from '@clerk/nextjs';
+import { Toaster } from "@/components/ui/sonner";
 import {Nunito } from "next/font/google";
 import "./globals.css";
 
@@ -31,6 +32,7 @@ export default function RootLayout({
 
     <html lang="en">
       <body className={font.className}>
+        <Toaster />
         {children}
       </body>
     </html>

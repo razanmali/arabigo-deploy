@@ -30,12 +30,14 @@ export const getCourses = cache(async() =>{
 });
 
 export const getUnits = cache(async () => {
+    const {userId} = await auth();
     const userProgress = await getUserProgress();
 
-    if (!userProgress?.activeCourseId) {
+    if (!userId || !userProgress?.activeCourseId) {
         return [];
     }
 
+    // TODO: Adding order
     const data = await db.query.units.findMany({
         where: eq(units.coursId, userProgress.activeCourseId),
         with: {
@@ -43,13 +45,18 @@ export const getUnits = cache(async () => {
                 with:{
                      challenges: {
                     with: {
-                        challengeProgress: true,
+                        challengeProgress: {
+                            where: eq(
+                                challengeProgress.userId,
+                                userId,
+                            ),
+                         },
                     },
                 },
             },
         },
     },
-    });
+});
 
     const normalizedData = data.map((unit) => {
         const lessonsWithCompletedStatus = unit.lessons.map((lesson) => {

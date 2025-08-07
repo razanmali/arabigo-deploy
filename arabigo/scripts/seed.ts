@@ -95,7 +95,7 @@ const main = async () => {
             imageSrc:"/man.svg",
             correct: true,
             text: "رجل",
-            audioSrc: "/ar_man.mp3",//TODO: record the words
+            audioSrc: "/ar_man.mp3",
         },
         {
             id: 2,
@@ -103,15 +103,15 @@ const main = async () => {
             imageSrc:"/woman.svg",
             correct: false,
             text: "امرأة",
-            audioSrc: "/ar_woman.mp3",//TODO: record the words
+            audioSrc: "/ar_woman.mp3",
         },
         {
             id: 3,
             challengeId:1,
             imageSrc:"/boy.svg",
             correct: false,
-            text: "ولد",
-            audioSrc: "/ar_boy.mp3",//TODO: record the words
+            text: "طفل",
+            audioSrc: "/ar_boy.mp3",
         },
      ]);
 

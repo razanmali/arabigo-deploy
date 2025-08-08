@@ -78,19 +78,26 @@ const main = async () => {
             order: 1,
             question: 'Which one of these is the "man"?',
         },
-        //   {
-        //     id: 2,
-        //     lessonId: 2,// Verbs
-        //     type: "SELECT",
-        //     order: 2,
-        //     question: 'Which one of these is the "man"?',
-        // },
+          {
+            id: 2,
+            lessonId: 1,
+            type: "ASSIST",
+            order: 2,
+            question: '"the man"',
+        },
+         {
+            id: 3,
+            lessonId: 1,
+            type: "SELECT",
+            order: 3,
+            question: 'Which one of these is the "woman"?',
+        },
         
     ]);
 
      await db.insert(schema.challengeOptions).values([
         {
-            id: 1,
+            
             challengeId:1,//'Which one of these is the "man"?'
             imageSrc:"/man.svg",
             correct: true,
@@ -98,7 +105,7 @@ const main = async () => {
             audioSrc: "/ar_man.mp3",
         },
         {
-            id: 2,
+            
             challengeId:1,
             imageSrc:"/woman.svg",
             correct: false,
@@ -106,7 +113,7 @@ const main = async () => {
             audioSrc: "/ar_woman.mp3",
         },
         {
-            id: 3,
+            
             challengeId:1,
             imageSrc:"/boy.svg",
             correct: false,
@@ -114,7 +121,52 @@ const main = async () => {
             audioSrc: "/ar_boy.mp3",
         },
      ]);
-
+await db.insert(schema.challengeOptions).values([
+        {
+           
+            challengeId:2,//the "man"?'
+            correct: true,
+            text: "رجل",
+            audioSrc: "/ar_man.mp3",
+        },
+        {
+            
+            challengeId:2,
+            correct: false,
+            text: "امرأة",
+            audioSrc: "/ar_woman.mp3",
+        },
+        {
+           
+            challengeId:2,
+            correct: false,
+            text: "طفل",
+            audioSrc: "/ar_boy.mp3",
+        },
+     ]);
+       await db.insert(schema.challengeOptions).values([
+        {
+            challengeId:3,//'Which one of these is the "woman"?'
+            imageSrc:"/man.svg",
+            correct: false,
+            text: "رجل",
+            audioSrc: "/ar_man.mp3",
+        },
+        {
+            challengeId:3,
+            imageSrc:"/woman.svg",
+            correct: true,
+            text: "امرأة",
+            audioSrc: "/ar_woman.mp3",
+        },
+        {
+            challengeId:3,
+            imageSrc:"/boy.svg",
+            correct: false,
+            text: "طفل",
+            audioSrc: "/ar_boy.mp3",
+        },
+     ]);
 
         console.log("Seeding finished");
 

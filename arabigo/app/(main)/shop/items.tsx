@@ -5,9 +5,9 @@ import { useTransition } from "react";
 import { refillHearts } from "@/actions/user-progress";
 import { toast } from "sonner";
 import { createStripeUrl } from "@/actions/user-subscription";
+import { POINTS_TO_REFILL } from "@/constants";
 
 
-const POINTS_TO_REFILL = 5;
 type Props = {
     hearts: number;
     points: number;
@@ -97,7 +97,7 @@ export const Items = ({
                 <Button
                 onClick={onUpgrade}
                 disabled={pending}>
-                    {hasActiveSubscription ? "settings" : "upgrade"}
+                    {hasActiveSubscription ? "settings " : "upgrade"}
                 </Button>
             </div>
         </ul>

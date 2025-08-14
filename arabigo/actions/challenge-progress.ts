@@ -1,13 +1,14 @@
 "use server"
 
 import db from "@/db/drizzle";
-import { getUserProgress } from "@/db/queries";
+import { getUserProgress, getUserSubscription } from "@/db/queries";
 import { challengeProgress, challenges, userProgress } from "@/db/schema";
 import { auth } from "@clerk/nextjs/server";
 import { error } from "console";
 import { eq, and} from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 
+//TODO CHECK THE USERCHALLENGEPROGRESS/ UPSERTCHALLENGEPROGRESS METHOD???
 export const userChallengeProgress = async (challengeId: number) => {
     const {userId} = await auth();
 
@@ -16,6 +17,7 @@ export const userChallengeProgress = async (challengeId: number) => {
     }
 
     const currentUserProgress = await getUserProgress();
+    const userSubscription = await getUserSubscription();
 
     if(!currentUserProgress) {
         throw new Error("User progress not found!");
@@ -40,9 +42,13 @@ export const userChallengeProgress = async (challengeId: number) => {
 
     const isPractice = !!existingChallengeProgress;
 
-    if(currentUserProgress.hearts === 0 && !isPractice){
+    if(
+        currentUserProgress.hearts === 0 
+        && !isPractice 
+        && !userSubscription?.isActive)
+        {
         return {error: "hearts"};
-    }
+     }
      if (isPractice) {
         await db.update(challengeProgress).set({
             completed: true,

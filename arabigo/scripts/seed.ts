@@ -10,7 +10,7 @@ const db = drizzle(sql, {schema});
 
 const main = async () => {
     try{
-        console.log("Seeding databse");
+        console.log("Seeding database");
 
         await db.delete(schema.courses);
         await db.delete(schema.userProgress);
@@ -35,7 +35,7 @@ const main = async () => {
     await db.insert(schema.units).values([
         {
             id: 1,
-            coursId: 1,
+            courseId: 1,
             title: "Unit 1",
             description: "Learn the basics of Arabic",
             order: 1,

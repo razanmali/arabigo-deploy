@@ -22,13 +22,13 @@ export const units = pgTable("units", {
     id: serial("id").primaryKey(),
     title: text("title").notNull(),
     description: text("description").notNull(),
-    coursId: integer("course_id").references(() => courses.id, {onDelete: "cascade"}).notNull(),
+    courseId: integer("course_id").references(() => courses.id, {onDelete: "cascade"}).notNull(),
     order: integer("order").notNull(),
 });
 
 export const unitsRelations = relations(units, ({many, one}) =>({
     course: one(courses, {
-        fields: [units.coursId],
+        fields: [units.courseId],
         references: [courses.id]
     }),
     lessons: many(lessons),

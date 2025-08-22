@@ -16,7 +16,7 @@ export default function Home() {
     <div className="flex flex-col items-center gap-y-8">
       <h1 className="text-xl lg:text-3xl font-bold text-neutral-600
       max-w-[480px] text-center">
-Master Arabic with Arabigo.      
+Давайте учить арабский с Arabigo      
 </h1>
 <div className="flex flex-col items-center gap-y-3 max-w-[330px] w-full">
   <ClerkLoading>
@@ -28,22 +28,22 @@ Master Arabic with Arabigo.
       mode="modal"
       fallbackRedirectUrl="/learn">
         <Button size="lg" variant="secondary" className="w-full">
-          Get Started
+          Начать
         </Button>
       </SignUpButton>
       <SignInButton 
       mode="modal"
       fallbackRedirectUrl="/learn">
         <Button size="lg" variant="primaryOutline" className="w-full">
-        I already have an account  
-        </Button>
+      У меня уже есть аккаунт        
+      </Button>
       </SignInButton>
     </SignedOut>
     <SignedIn>
       <Button size="lg" variant="secondary" className="w-full" asChild>
         <Link href="/learn">
      
-        Continue Learning
+        Продолжить обучение
            </Link>
       </Button>
     </SignedIn>

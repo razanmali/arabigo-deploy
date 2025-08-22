@@ -40,7 +40,7 @@ export const Header = () => {
                 signUpFallbackRedirectUrl="/learn"
               >
                 <Button size="lg" variant="ghost">
-                  Login
+                  Войти
                 </Button>
               </SignInButton>
             </SignedOut>

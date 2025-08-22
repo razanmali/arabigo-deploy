@@ -51,10 +51,10 @@ const QuestsPage = async() => {
                     />
                     <h1 className="text-center font-bold text-neutral-800 
                     text-2xl my-6">
-                        Quests
+                        Квесты
                     </h1>
                     <p className="text-muted-foreground text-center text-lg mb-6">
-                        Complete quests by earning points.
+                        Выполняйте квесты и зарабатывайте очки
                     </p>
                     <ul className="w-full">
                         {quests.map((quest) => {

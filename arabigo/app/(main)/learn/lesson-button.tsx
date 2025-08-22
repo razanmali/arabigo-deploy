@@ -67,7 +67,7 @@ type Props={
                     font-bold uppercase text-green-500
                     bg-white rounded-xl 
                     animate-bounce tracking-wide z-10">
-                        Start
+                        Начать
                         <div
                         className="absolute left-1/2 -bottom-2
                         w-0 h-0 border-x-8 border-x-transparent border-t-8

@@ -57,7 +57,7 @@ export const Items = ({
                 width={60}/>
                 <div className="flex-1">
                     <p className="text-neutral-700 text-base lg:text-xl font-bold">
-                         Refill hearts
+                         Пополнить сердца
                     </p>
                 </div>
                 <Button
@@ -67,7 +67,7 @@ export const Items = ({
                     || points < POINTS_TO_REFILL
                     || pending}>
                     {hearts === 5
-                    ? "full"
+                    ? "Заполнено"
                 : (
                     <div className="flex items-center">
                         <Image
@@ -91,13 +91,13 @@ export const Items = ({
                 />
                 <div className="flex-1">
                     <p className="text-neutral-700 text-base lg:text-xl font-bold">
-                        Unlimited hearts
+                        Безлимитные сердца
                     </p>
                 </div>
                 <Button
                 onClick={onUpgrade}
                 disabled={pending}>
-                    {hasActiveSubscription ? "settings " : "upgrade"}
+                    {hasActiveSubscription ? "Настройки" : "Обновить"}
                 </Button>
             </div>
         </ul>

@@ -1,6 +1,13 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+
+html,
+body,
+:root {
+  @apply h-full;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 html,
@@ -14,11 +21,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-* {
+
+/* * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-}
+} */
 
 a {
   color: inherit;
@@ -145,4 +153,5 @@ a {
   body {
     @apply bg-background text-foreground;
   }
+  
 }

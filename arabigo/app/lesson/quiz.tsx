@@ -5,7 +5,6 @@ import { challengeOptions, challenges, userSubscription } from "@/db/schema";
 import { useState, useTransition } from "react";
 import { Header } from "./header";
 import { QuestionBubble } from "./question-bubble";
-import { Option } from "lucide-react";
 import { Challenge } from "./challenge";
 import { Footer } from "./footer";
 import { userChallengeProgress } from "@/actions/challenge-progress";

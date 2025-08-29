@@ -1,7 +1,6 @@
 import { UserProgress } from "@/components/user-progress";
 import { StickyWrapper } from "@/components/sticky-wrapper";
 import { getUserProgress, getUserSubscription } from "@/db/queries";
-import { userProgress } from "@/db/schema";
 import { redirect } from "next/navigation";
 import { FeedWrapper } from "@/components/feed-wrapper";
 import Image from "next/image";

@@ -1,11 +1,9 @@
 import { UserProgress } from "@/components/user-progress";
 import { StickyWrapper } from "@/components/sticky-wrapper";
 import { getTopTenUsers, getUserProgress, getUserSubscription } from "@/db/queries";
-import { userProgress } from "@/db/schema";
 import { redirect } from "next/navigation";
 import { FeedWrapper } from "@/components/feed-wrapper";
 import Image from "next/image";
-import { index } from "drizzle-orm/gel-core";
 import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Promo } from "@/components/promo";
